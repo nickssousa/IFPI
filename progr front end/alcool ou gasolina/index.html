@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF- 8"/>
+        <meta name="viewport" content="width=device-width, initial-scale= 1.0"/>
+        <title> Alcool ou Gaslina</title>
+        <script src="assets/alcool.js" defer></script>
+        <link rel="stylesheet" href="assets/alcool.css" />
+    </head>
+    <body>
+    <div id="conteiner">
+
+    <header>App Gasto de Combustível</header>
+    
+<main>
+    <div id="formulario">
+        <label for="cx_alcool">Valor do litro do álcool: </label>
+        <input class="paragrafo" type="number" min="0.01" step="0.01" id="cx_alcool" placeholder="R$" autocomplete="off"/>
+        <br>
+
+        <label for="cx_gasolina">Valor do litro da gasolina: </label>
+        <input class="paragrafo"  type="number" min="0.01" step="0.01" id="cx_gasolina" placeholder="R$" />
+        <br>
+
+        <label for="cx_veiculo">Perfomance do veículo: </label>
+        <input class="paragrafo"  type="number" min="0.01" step="0.01" id="cx_veiculo" placeholder="Km por litro" autocomplete="off" />
+        <br>
+        
+        <label for="cx_dinheiro">Quanto de dinheiro tem para investir:</label>
+        <input class="paragrafo"  type="number" min="0.01" step="0.01" id="cx_dinheiro" placeholder="R$" />
+        <br>
+        
+        <label for="cx_distancia">Distância:</label>
+        <input class="paragrafo"  type="number" id="cx_distancia" placeholder="Km"/>
+        <br>
+    </div>
+
+    <div id="butaum">
+        <button class= "butaum" id="btn_calcular">Calcular</button>
+        <button class= "butaum" id="btn_limpar">Limpar</button>
+    </div>
+
+</main>
+
+
+<div id="result">
+    <div id="right">
+        <h2 class="resultado">Gasolina</h2>
+        <h3 id="resultado1" class="resultado"></h3>
+        <h3 id="resultado2" class="resultado"></h3>
+        <h3 id="resultado3" class="resultado"></h3>
+    </div>
+    <div id="left">
+        <h2 class="resultado">Álcool</h2>
+        <h3 id="resultado4" class="resultado"></h3>
+        <h3 id="resultado5" class="resultado"></h3>
+        <h3 id="resultado6" class="resultado"></h3>
+
+    </div>
+</div>
+
+<footer>
+    IFPI @ 2022
+</footer>
+    </div>
+    </body>
+</html>
