@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    flex-wrap: nowrap;
+}
+
+button{
+    height: 30%;
+    margin: 0 45px;
+}
+
+#container-geral{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    background-color: red;
+
+    height: 100vh;
+}
+
+header {
+    background-color: #F08700;
+    height: 13vh;
+}
+
+
+
+nav{
+    background-color: #EFCA08;
+    height: 6vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav#social-links{
+    background-color: #F49F0A;
+}
+
+nav ul {
+    border-top: 5px solid;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    /* background-color: yellow; */
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: #00A6A6;
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+}
+
+main section#left{
+    flex: 6;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main section#left h3{
+    flex: 2;
+    text-align: center;
+    font-size: 1.3rem;
+
+    padding-left: 60px;
+    padding-right: 60px;
+
+    background: yellow;
+
+    display: flex;
+    align-items: center;
+
+}
+
+main section#left div{
+    display: flex;
+    background-color: red;
+    flex: 7;
+    flex-direction: row;
+}
+
+main section#left div#carrosel {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(93, 93, 252);
+}
+
+main section#left div#lista {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    flex-direction: column;
+
+}
+
+main section#left ul{
+    flex: 9;
+}
+
+main section#left div#lista div#botoes{
+    display: flex;
+    flex: 2; 
+    align-items: center;
+}
+
+main section#right{
+    background-color:purple;
+    flex: 5;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+main section#right div#noticias_cima{
+    display: flex;
+    flex: 1;
+}
+
+main section#right div#noticias_baixo{
+    display: flex;
+    flex: 1;
+}
+
+main section#right div#primeiro{
+    display: flex;
+    background-color: green;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+main section#right div#segundo{
+    display: flex;
+    background: rgb(17, 53, 17);
+    color: white;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+main section#right div#terceiro{
+    display: flex;
+    background: rgb(56, 94, 56);
+    color: white;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+main section#right div#quarto{
+    display: flex;
+    background: rgb(185, 241, 185);
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
