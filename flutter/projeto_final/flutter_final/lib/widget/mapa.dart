@@ -1,50 +1,54 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 
 class Mapa extends StatefulWidget {
-  const Mapa({super.key});
-
   @override
   State<Mapa> createState() => MapaState();
 }
 
 class MapaState extends State<Mapa> {
-  final Completer<GoogleMapController> _controller =
-      Completer<GoogleMapController>();
+  late GoogleMapController mapController;
 
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  final LatLng _center = const LatLng(-5.088641218688359, -42.81186970076059);
 
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(-5.088603390796801, -42.81131544824977),
-      tilt: 59.440717697143555,
-      zoom:19.151926040649414);
+  void _onMapCreated(GoogleMapController controller){
+    mapController = controller;
+  }
+
+  _localizacaoAtual() async{
+    Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    print('Localização: ' + position.toString());
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _localizacaoAtual();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Mapa'),
+        backgroundColor: Colors.green,
+      ),
       body: GoogleMap(
+        myLocationEnabled: true,
         mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+        onMapCreated: _onMapCreated,
+        initialCameraPosition: CameraPosition(
+          target: _localizacaoAtual(),
+          zoom: 20.0
+        ),
+        
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: const Text('Para o IFPI!'),
-        icon: const Icon(Icons.school),
-      ),
+      
     );
-  }
-
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }

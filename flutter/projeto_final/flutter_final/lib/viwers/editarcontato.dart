@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_final/widget/construtor.dart';
-import 'package:flutter_final/viwers/contatos.dart';
 
 class EditarContato extends StatefulWidget {
   final Objeto objeto;

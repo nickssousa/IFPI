@@ -71,6 +71,14 @@ class _MoviesListViewState extends State<MoviesListView> {
           );
         },
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+            Navigator.pop;
+            },
+        tooltip: 'Sair',
+        child: const Icon(Icons.exit_to_app),
+      ), 
     );
   }
 }

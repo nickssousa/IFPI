@@ -64,7 +64,7 @@ class _Add_ContatoState extends State<Add_Contato> {
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                 child: TextField(
                   controller: marcador1Controller,
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Latitude',
@@ -75,7 +75,7 @@ class _Add_ContatoState extends State<Add_Contato> {
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                 child: TextField(
                   controller: marcador2Controller,
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Longitude',

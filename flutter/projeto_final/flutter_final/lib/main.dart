@@ -1,15 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_final/extra/home.dart';
 import 'package:flutter_final/viwers/add_contato.dart';
 import 'package:flutter_final/firebase_options.dart';
-import 'package:firebase_database/firebase_database.dart';
 
 
 
 import 'viwers/login.dart';
-import 'viwers/editarcontato.dart';
 import 'viwers/cadastrar.dart';
 import 'viwers/inicial.dart';
 import 'viwers/tela2.dart';
@@ -25,7 +22,6 @@ void main() async{
   
   runApp(const MyApp());
 
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
 }
 
 class MyApp extends StatelessWidget {
@@ -46,7 +42,7 @@ class MyApp extends StatelessWidget {
         "/inicial": (ctx) => const Inicial(),
         "/cadastrar": (ctx) => const Cadastrar(),
         "/tela2" : (ctx) => const Tela2(),
-        "/mapa" : (ctx) => const Mapa(),
+        "/mapa" : (ctx) => Mapa(),
         "/contatos" : (ctx) => const Contatos(),
         "/addcontatos" : (ctx) => const Add_Contato(),
         "/extra1" : (ctx) => const App(),
