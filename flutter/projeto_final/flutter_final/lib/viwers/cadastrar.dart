@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Cadastrar extends StatefulWidget {
@@ -8,6 +9,19 @@ class Cadastrar extends StatefulWidget {
 }
 
 class _CadastrarState extends State<Cadastrar> {
+  late TextEditingController usuarioController;
+  late TextEditingController senhaController;
+
+  final firestore = FirebaseFirestore.instance;
+
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    usuarioController = TextEditingController();
+    senhaController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +40,7 @@ class _CadastrarState extends State<Cadastrar> {
           Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextField(
+                  controller: usuarioController,
                   keyboardType: TextInputType.name,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -37,6 +52,7 @@ class _CadastrarState extends State<Cadastrar> {
           Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                 child: TextField(
+                  controller: senhaController,
                   keyboardType: TextInputType.name,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -60,6 +76,10 @@ class _CadastrarState extends State<Cadastrar> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () {
+                        firestore.collection("Usuario").add({
+                              'Usuario': usuarioController.text,
+                              'Senha': senhaController.text,
+                        });
                         Navigator.pushNamed(context, '/inicial');
                       },
                       child: const Text(

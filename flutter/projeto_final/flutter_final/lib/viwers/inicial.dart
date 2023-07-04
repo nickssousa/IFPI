@@ -119,9 +119,11 @@ class _InicialState extends State<Inicial> {
                                 textStyle: MaterialStateProperty.all(
                               const TextStyle(
                                   fontSize: 20, color: Colors.white))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/extra2');
+                        },
                         child: const Text(
-                          'Extra',
+                          'API #2',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),

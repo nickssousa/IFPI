@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
   final _usuarioController = TextEditingController();
   final _senhaController = TextEditingController();
 
@@ -29,7 +30,9 @@ class _LoginState extends State<Login> {
         title: const Text('Tela de Login'),
         centerTitle: true,
       ),
-      body: Column(children: [
+      body: Form(
+        key: _formKey,
+        child: 
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -42,8 +45,14 @@ class _LoginState extends State<Login> {
                   child: Image.asset('images/ifpi.png')),
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: TextField(
+                child: TextFormField(
                   controller: _usuarioController,
+                  validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, informe um usuario';
+                  }
+                  return null;
+                },
                   keyboardType: TextInputType.name,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -54,9 +63,15 @@ class _LoginState extends State<Login> {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-                child: TextField(
+                child: TextFormField(
                   controller: _senhaController,
                   obscureText: true,
+                  validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, informe uma senha';
+                  }
+                  return null;
+                },
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Senha',
@@ -74,7 +89,9 @@ class _LoginState extends State<Login> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/inicial');
+                        if (_formKey.currentState!.validate()) {        
+                            Navigator.pushNamed(context, '/inicial');
+                        }
                       },
                       child: const Text(
                         'ENTRAR',
@@ -100,7 +117,7 @@ class _LoginState extends State<Login> {
             ],
           ),
         ),
-      ]),
+      ),
     );
   }
 }

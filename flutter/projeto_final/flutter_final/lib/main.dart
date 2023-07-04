@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_final/extra/home.dart';
 import 'package:flutter_final/viwers/add_contato.dart';
 import 'package:flutter_final/firebase_options.dart';
 
 
 
 import 'viwers/login.dart';
+import 'extra/movies.dart';
+import 'extra/cep.dart';
 import 'viwers/cadastrar.dart';
 import 'viwers/inicial.dart';
 import 'viwers/tela2.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
         "/mapa" : (ctx) => Mapa(),
         "/contatos" : (ctx) => const Contatos(),
         "/addcontatos" : (ctx) => const Add_Contato(),
-        "/extra1" : (ctx) => const App(),
+        "/extra1" : (ctx) => const MoviesListView(),
+        "/extra2" : (ctx) => const Extra2(),
       },
     );
   }

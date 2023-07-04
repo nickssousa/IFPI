@@ -31,7 +31,8 @@ class _MoviesListViewState extends State<MoviesListView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: const Text("Lista de Filmes"),
+        titleTextStyle: TextStyle(fontSize: 20, color: Colors.white),
+        title: const Text('Lista de Filmes'),
       ),
       // Aqui vem nossa lista
       body: ListView.builder(
@@ -72,13 +73,6 @@ class _MoviesListViewState extends State<MoviesListView> {
         },
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-            Navigator.pop;
-            },
-        tooltip: 'Sair',
-        child: const Icon(Icons.exit_to_app),
-      ), 
     );
   }
 }

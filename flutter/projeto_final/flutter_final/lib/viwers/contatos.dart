@@ -35,7 +35,7 @@ class _ContatosState extends State<Contatos> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection("Contatos").snapshots(),
@@ -47,7 +47,7 @@ class _ContatosState extends State<Contatos> {
 
         }
         return Container(
-          height: 250,
+          height: 500,
           width: 500,
           child: ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {

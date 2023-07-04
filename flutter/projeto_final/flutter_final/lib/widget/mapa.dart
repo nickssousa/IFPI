@@ -40,11 +40,11 @@ class MapaState extends State<Mapa> {
       ),
       body: GoogleMap(
         myLocationEnabled: true,
-        mapType: MapType.hybrid,
+        mapType: MapType.normal,
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
-          target: _localizacaoAtual(),
-          zoom: 20.0
+          target: _center,
+          zoom: 15.0
         ),
         
       ),
