@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizações tabajara</title>
+</head>
+
+<body>
+    <img src="tabajara.jpg" width="450px" height="300px">
+    <br>
+    <label>Informe o salário atual:</label>
+    <input type="number" id="salario">
+    <button class="button" onclick="Rejustar()">Rejustar</button>
+    <br>
+    <p id="res1">Salario antes do reajuste: </p>
+    <p id="res2">Percentual de aumento aplicado: </p>
+    <p id="res3">Valor do aumento: </p>
+    <p id="res4">Novo salário, após o aumento: </p>
+
+    <script>
+        function Rejustar()
+        {
+        var salario1 = parseInt(document.getElementById("salario").value);
+        document.getElementById("res1").innerHTML= 
+        "Salario antes do reajuste: R$ " + salario1;
+        
+        if (salario1 <= 280){
+            var percentual = "20%"
+            var aumento = salario1*0.2
+            salario2 = salario1 + aumento 
+        }
+
+        else if (salario1 <= 700){
+            var percentual = "15%"
+            var aumento = salario1*0.15
+            salario2 = salario1 + aumento 
+        }
+
+        else if (salario1 <= 1500){
+            var percentual = "10%"
+            var aumento = salario1*0.1
+            salario2 = salario1 + aumento
+        }
+
+        else if (salario1 > 1500){
+            var percentual = "5%"
+            var aumento = salario1*0.05
+            salario2 = salario1 + aumento 
+        }
+
+        document.getElementById("res2").innerHTML= 
+        "Percentual de aumento aplicado: " + percentual;
+
+        document.getElementById("res3").innerHTML= 
+        "Valor do aumento: R$ " + aumento;
+
+        document.getElementById("res4").innerHTML= 
+        "Novo salário, após o aumento: R$ " + salario2;
+
+        }
+    </script>
+    
+</body>
+</html>
